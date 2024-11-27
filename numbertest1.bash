@@ -1,5 +1,5 @@
 #!/bin/bash
-# SPDX-FileCopyrightText: 2024 Kohei Kobayashi
+# SPDX-FileCopyrightText: 2024 Kouhei Kobayashi
 # SPDX-License-Identifire: BSD-3-Clause
 
 ng () {
