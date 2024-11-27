@@ -2,10 +2,13 @@
 [![test](https://github.com/lemon528/robosys2024/actions/workflows/test.yml/badge.svg)](https://github.com/lemon528/robosys2024/actions/workflows/test.yml)  
 ロボットシステム学授業用
 
+## Plus
+数値における足し算を行い計算する。
+
 ## number_stats
 このプロジェクトは様々な数値データにおける最大値、最小値、合計値、平均値を計算し表示させます。
 
-## ダウンロード方法
+## ダウンロード方法(共通)
 - リポジトリをクローン
 - cdでディレクトリに移動
 
@@ -19,12 +22,20 @@ $ cd robosys2024
 - 権限を付与する必要があるため権限を与えてから実行してください。
 - ファイルの実行
 ```
-$ chmod +x number_stats
+$ chmod +x <ファイル名>
 
-$ ./number_stats
+$ ./<ファイル名>
 ```
 
-- 実行後数値を入力します。  
+**Plusコード**　　
+seqコマンドで数列を計算可能
+```
+$ seq 5 ./plus
+```
+
+**number_stastsコード**  
+ - 実行後数値を入力します。  
+
 ***入力する際の注意点***
  - 半角入力すること。
  - 数値と数値の間にスペースを入れること。
