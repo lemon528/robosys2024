@@ -1,0 +1,48 @@
+#!/usr/bin/python3
+# SPDX-FileCopyrightText: 2024 Kohei Kobayashi
+# SPDX-License-Identifire: BSD-3-Clause
+
+import sys
+
+def calculate_stats(numbers):
+    """リスト内の基本統計量を計算する"""
+    total = sum(numbers)
+    avg = total / len(numbers)
+    max_value = max(numbers)
+    min_value = min(numbers)
+    return total, avg, max_value, min_value
+
+def main():
+    # 標準入力がパイプやリダイレクトで使われた場合
+    if not sys.stdin.isatty():
+        input_data = sys.stdin.read().strip()
+    else:
+        input_data = input("Enter numbers separated by spaces: ").strip()
+    
+    if not input_data:
+        print("No input provided.")
+        return
+
+    try:
+        # 入力データをリストに変換
+        numbers = list(map(float, input_data.split()))
+        if not numbers:
+            print("No valid numbers found.")
+            return
+        
+        # 統計量を計算
+        total, avg, max_value, min_value = calculate_stats(numbers)
+
+        # 結果を表示
+        print(f"Numbers: {numbers}")
+        print(f"Sum: {total}")
+        print(f"Average: {avg}")
+        print(f"Max: {max_value}")
+        print(f"Min: {min_value}")
+
+    except ValueError:
+        print("Invalid input. Please provide numbers separated by spaces.")
+
+if __name__ == "__main__":
+    main()
+
