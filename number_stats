@@ -5,7 +5,6 @@
 import sys
 
 def calculate_stats(numbers):
-    """リスト内の基本統計量を計算する"""
     total = sum(numbers)
     avg = total / len(numbers)
     max_value = max(numbers)
@@ -13,7 +12,6 @@ def calculate_stats(numbers):
     return total, avg, max_value, min_value
 
 def main():
-    # 標準入力がパイプやリダイレクトで使われた場合
     if not sys.stdin.isatty():
         input_data = sys.stdin.read().strip()
     else:
@@ -24,16 +22,13 @@ def main():
         return
 
     try:
-        # 入力データをリストに変換
         numbers = list(map(float, input_data.split()))
         if not numbers:
             print("No valid numbers found.")
             return
         
-        # 統計量を計算
         total, avg, max_value, min_value = calculate_stats(numbers)
 
-        # 結果を表示
         print(f"Numbers: {numbers}")
         print(f"Sum: {total}")
         print(f"Average: {avg}")

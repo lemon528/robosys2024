@@ -1,4 +1,6 @@
 #!/bin/bash
+# SPDX-FileCopyrightText: 2024 Kohei Kobayashi
+# SPDX-License-Identifire: BSD-3-Clause
 
 ng () {
     echo "${1}行目が違うよ"
