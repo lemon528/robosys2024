@@ -53,7 +53,7 @@ Min(最小値): 10.0
 
 ## ライセンス
 - このソフトウェアパッケージは，3条項BSDライセンスの下，再頒布および使用が許可されます。
-- このパッケージのコードは，下記のスライド（CC-BY-SA 4.0 by Ryuichi Ueda）のものを，本人の許可を得て自身の著作としたものです．
+- このパッケージの一部のコードは，下記のスライド（CC-BY-SA 4.0 by Ryuichi Ueda）のものを，本人の許可を得て自身の著作としたものです．
  - https://ryuichiueda.github.io/slides_marp/robosys2024/lesson2.html#1
  - https://ryuichiueda.github.io/slides_marp/robosys2024/lesson3.html#1
 - © 2024 Kouhei Kobayashi
