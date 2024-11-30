@@ -18,17 +18,17 @@ $ git clone https://github.com/lemon528/robosys2024.git
 
 $ cd robosys2024
 
-$ chmod +x <ファイル名>
+$ chmod +x ./plus  $ chmod +x ./number_stats
 ```
 
 ## 実行方法と出力結果
-**Plus**  
+- **Plus**  
 ```
 $ seq 10 | ./plus
 55
 ```
 
-**number_stasts**  
+- **number_stasts**  
 ```
 $ echo -e "10\n20\n30\n40\n50" | ./number_stats
 === Statistics ===
