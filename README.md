@@ -26,7 +26,7 @@ $ cd robosys2024
 
 
 ## 実行方法と出力結果
-- **Plus**  
+- **plus**  
 ```
 $ seq 10 | ./plus
 55
