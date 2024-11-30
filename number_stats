@@ -4,40 +4,74 @@
 
 import sys
 
-def calculate_stats(numbers):
-    total = sum(numbers)
-    avg = total / len(numbers)
-    max_value = max(numbers)
-    min_value = min(numbers)
-    return total, avg, max_value, min_value
+def calculate_mean(numbers):
+    return sum(numbers) / len(numbers) #平均値
 
-def main():
-    if not sys.stdin.isatty():
-        input_data = sys.stdin.read().strip()
+def calculate_population_variance(numbers, mean):
+    n = len(numbers)
+    return sum((x - mean) ** 2 for x in numbers) / n if n > 0 else 0 #分散
+
+def calculate_standard_deviation(variance):
+    return variance ** 0.5 #標準偏差
+
+def calculate_median(numbers):
+    sorted_numbers = sorted(numbers)
+    n = len(sorted_numbers)
+    mid = n // 2
+    if n % 2 == 0:
+        return (sorted_numbers[mid - 1] + sorted_numbers[mid]) / 2
     else:
-        input_data = input("Enter numbers separated by spaces: ").strip()
-    
-    if not input_data:
-        print("No input provided.")
-        return
+        return sorted_numbers[mid] #中央値
 
+def calculate_quartiles(numbers):
+    sorted_numbers = sorted(numbers)
+    n = len(sorted_numbers)
+    mid = n // 2
+
+    if n % 2 == 0:
+        lower_half = sorted_numbers[:mid]
+        upper_half = sorted_numbers[mid:]
+    else:
+        lower_half = sorted_numbers[:mid]
+        upper_half = sorted_numbers[mid + 1:]
+
+    q1 = calculate_median(lower_half)  # 第一四分位数
+    q3 = calculate_median(upper_half)  # 第三四分位数
+    return q1, q3
+
+def stdin_stats_calculator():
     try:
-        numbers = list(map(float, input_data.split()))
-        if not numbers:
-            print("No valid numbers found.")
-            return
-        
-        total, avg, max_value, min_value = calculate_stats(numbers)
+        numbers = [float(line.strip()) for line in sys.stdin]
 
+        if not numbers:
+            print("No numbers provided. Please input some numbers.")
+            return
+
+        mean = calculate_mean(numbers)
+        population_variance = calculate_population_variance(numbers, mean)
+        std_dev = calculate_standard_deviation(population_variance)
+        median = calculate_median(numbers)
+        q1, q3 = calculate_quartiles(numbers)
+        maximum = max(numbers)
+        minimum = min(numbers)
+        total = sum(numbers)
+
+        print("=== Statistics ===")
         print(f"Numbers: {numbers}")
-        print(f"Sum: {total}")
-        print(f"Average: {avg}")
-        print(f"Max: {max_value}")
-        print(f"Min: {min_value}")
+        print(f"Sum(合計): {total}")
+        print(f"Mean(平均値): {mean}")
+        print(f"Population Variance(標準偏差): {population_variance}")
+        print(f"Standard Deviation(分散): {std_dev}")
+        print(f"Median(中央値): {median}")
+        print(f"First Quartile(第1四分位数): {q1}")
+        print(f"Third Quartile(第3四分位数): {q3}")
+        print(f"Max(最大値): {maximum}")
+        print(f"Min(最小値): {minimum}")
 
     except ValueError:
-        print("Invalid input. Please provide numbers separated by spaces.")
+        print("Invalid input detected. Please enter only numbers.")
+    except Exception as e:
+        print(f"An error occurred: {e}")
 
 if __name__ == "__main__":
-    main()
-
+    stdin_stats_calculator()
