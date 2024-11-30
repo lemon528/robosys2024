@@ -18,7 +18,8 @@ $ git clone https://github.com/lemon528/robosys2024.git
 
 $ cd robosys2024
 
-$ chmod +x ./plus  $ chmod +x ./number_stats
+$ chmod +x ./plus
+$ chmod +x ./number_stats
 ```
 
 ## 実行方法と出力結果
