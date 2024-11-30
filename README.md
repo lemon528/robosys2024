@@ -17,12 +17,13 @@
 $ git clone https://github.com/lemon528/robosys2024.git
 
 $ cd robosys2024
+```
 
-`| コマンド                   | 説明                             |
+| コマンド                   | 説明                             |
 |----------------------------|----------------------------------|
 | `$ chmod +x ./plus`        | `plus` の実行権限付与        |
 | `$ chmod +x ./number_stats`| `number_stats` の実行権限付与|
-```
+
 
 ## 実行方法と出力結果
 - **Plus**  
