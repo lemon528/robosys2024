@@ -22,13 +22,13 @@ $ chmod +x <ファイル名>
 ```
 
 ## 実行方法と出力結果
-**Plusコード**  
+**Plus**  
 ```
 $ seq 10 | ./plus
 55
 ```
 
-**number_stastsコード**  
+**number_stasts**  
 ```
 $ echo -e "10\n20\n30\n40\n50" | ./number_stats
 === Statistics ===
