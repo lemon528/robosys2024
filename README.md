@@ -2,10 +2,10 @@
 [![test](https://github.com/lemon528/robosys2024/actions/workflows/test.yml/badge.svg)](https://github.com/lemon528/robosys2024/actions/workflows/test.yml)  
 ロボットシステム学授業用
 
-## plus
+## plusコマンド
 数値における足し算を行う。
 
-## number_stats
+## number_statsコマンド
 入力した数値の最大値,最小値,合計,平均値,中央値,分散,標準偏差,第1四分位数,第3四分位数を表示させます。
 
 ## 使用方法
